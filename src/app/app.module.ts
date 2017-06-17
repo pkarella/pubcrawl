@@ -8,12 +8,14 @@ import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
 import {routing, appRoutingProviders} from './app.routing';
 import {AuthService} from './auth.service';
+import { CallbackComponent } from './callback/callback.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    ProfileComponent
+    ProfileComponent,
+    CallbackComponent
   ],
   imports: [
     BrowserModule,

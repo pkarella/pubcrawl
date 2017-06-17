@@ -2,6 +2,7 @@ import {ModuleWithProviders} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 
 import {HomeComponent} from './home/home.component';
+import {CallbackComponent} from './callback/callback.component';
 import {ProfileComponent} from './profile/profile.component';
 
 const appRoutes: Routes=[
@@ -10,9 +11,18 @@ const appRoutes: Routes=[
     component: HomeComponent
   },
   {
+    path: 'home',
+    component: HomeComponent
+  },
+  {
+    path: 'callback',
+    component: CallbackComponent
+  },
+  {
   path: 'profile',
   component: ProfileComponent
   }
+
 ];
 
 export const appRoutingProviders: any[] = [];

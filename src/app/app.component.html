@@ -6,7 +6,10 @@
     </div>
     <ul class="nav navbar-nav navbar-right">
 
+      <li><a href="#" (click)="auth.login()" *ngIf="!auth.isAuthenticated()">Login</a></li>
       <li><a routerLink="/profile">Profile</a></li>
+        <li><a href="#" (click)="auth.logout()" *ngIf="auth.isAuthenticated()">Logout</a></li>
+
 
     </ul>
     <h1>
