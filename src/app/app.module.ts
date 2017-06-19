@@ -9,21 +9,42 @@ import { ProfileComponent } from './profile/profile.component';
 import {routing, appRoutingProviders} from './app.routing';
 import {AuthService} from './auth.service';
 import { CallbackComponent } from './callback/callback.component';
+import {CrawlService} from './crawl.service';
+
+
+import { masterFirebaseConfig } from './api-keys';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { CrawlListComponent } from './crawl-list/crawl-list.component';
+import { NewCrawlComponent } from './new-crawl/new-crawl.component';
+import { CrawlDetailComponent } from './crawl-detail/crawl-detail.component';
+
+export const firebaseConfig = {
+  apiKey: masterFirebaseConfig.apiKey,
+  authDomain: masterFirebaseConfig.authDomain,
+  databaseURL: masterFirebaseConfig.databaseURL,
+  storageBucket: masterFirebaseConfig.storageBucket
+};
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     ProfileComponent,
-    CallbackComponent
+    CallbackComponent,
+    CrawlListComponent,
+    NewCrawlComponent,
+    CrawlDetailComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    routing
+    routing,
+     AngularFireModule.initializeApp(firebaseConfig),
+     AngularFireDatabaseModule
   ],
-  providers: [appRoutingProviders, AuthService],
+  providers: [appRoutingProviders, AuthService, CrawlService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

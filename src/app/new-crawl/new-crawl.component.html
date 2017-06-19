@@ -1,0 +1,51 @@
+<h3>Add a new Pub Crawl</h3>
+<div>
+  <div>
+    <label>Crawl name:</label>
+    <br>
+    <input #newTitle>
+  </div>
+
+  <div>
+    <label>What is your Name?:</label>
+    <br>
+    <input #newCreator>
+  </div>
+
+  <div>
+    <label>Start Time:</label>
+    <br>
+    <select #newStartingTime>
+      <option value="2:00pm">2:00pm</option>
+      <option value="2:30pm">2:30pm</option>
+      <option value="3:00pm">2:30pm</option>
+      <option value="3:30pm">3:30pm</option>
+      <option value="4:00pm">4:00pm</option>
+      <option value="4:30pm">4:30pm</option>
+      <option value="5:00pm">5:00pm</option>
+      <option value="5:30pm">5:30pm</option>
+      <option value="6:00pm">6:00pm</option>
+      <option value="6:30pm">6:30pm</option>
+      <option value="7:00pm">7:00pm</option>
+      <option value="7:30pm">7:30pm</option>
+      <option value="8:00pm">8:00pm</option>
+      <option value="8:30pm">8:30pm</option>
+      <option value="9:00pm">9:00pm</option>
+      <option value="9:30pm">9:30pm</option>
+      <option value="10:00pm">10:00pm</option>
+    </select>
+  </div>
+
+  <div>
+    <label>Starting Location:</label>
+    <br>
+    <textarea #newStartingLocation></textarea>
+  </div>
+
+  <div>
+    <label>Ending Location:</label>
+    <br>
+    <textarea #newEndingLocation></textarea>
+  </div>
+   <button (click)="submitForm(newTitle.value, newCreator.value, newStartingLocation.value, newEndingLocation.value, newStartingTime.value); newTitle.value=''; newStartingLocation.value=''; newEndingLocation.value=''; newCreator.value=''">Add</button>
+</div>

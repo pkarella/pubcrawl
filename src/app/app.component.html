@@ -8,7 +8,9 @@
 
       <li><a href="#" (click)="auth.login()" *ngIf="!auth.isAuthenticated()">Login</a></li>
       <li><a routerLink="/profile" *ngIf="auth.isAuthenticated()">Profile</a></li>
-        <li><a (click)="auth.logout()" *ngIf="auth.isAuthenticated()">Logout</a></li>
+      <li><a routerLink="/crawl-list" *ngIf="auth.isAuthenticated()">View All Crawls</a></li>
+      <li><a routerLink="/new-crawl" *ngIf="auth.isAuthenticated()">Add a New Bar Crawl</a></li>
+      <li><a (click)="auth.logout()" *ngIf="auth.isAuthenticated()">Logout</a></li>
 
 
     </ul>
