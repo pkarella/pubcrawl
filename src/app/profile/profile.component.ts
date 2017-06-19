@@ -13,18 +13,22 @@ export class ProfileComponent implements OnInit {
   profile: any;
 
   constructor(private auth: AuthService){
+
+
     // this.profile = JSON.parse(localStorage.getItem('profile'));
     // console.log(this.profile);
   }
 
   ngOnInit() {
-    if (this.auth.userProfile) {
-   this.profile = this.auth.userProfile;
- } else {
-   this.auth.getProfile((err, profile) => {
-     this.profile = profile;
-   });
- }
+      if (this.auth.userProfile) {
+     this.profile = this.auth.userProfile;
+
+   } else {
+     this.auth.getProfile((err, profile) => {
+       this.profile = profile;
+       console.log(this.profile)
+     });
+   }
   }
 
 }
