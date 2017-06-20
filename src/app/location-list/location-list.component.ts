@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Location } from '../location.model';
+import { LocationObj } from '../location.model';
 import { FoursquareService } from '../foursquare.service'
 import { Router } from '@angular/router';
+import { FirebaseListObservable } from 'angularfire2/database';
 
 
 @Component({
@@ -12,26 +13,39 @@ import { Router } from '@angular/router';
 })
 export class LocationListComponent implements OnInit {
   results;
-  locationList: Location []= [];
+  locations: FirebaseListObservable<any[]>;
+  currentRoute: string = this.router.url;
 
-  onClick() {
-    var test = this.callApi();
+  onClick(city: string, query: string) {
+    var test = this.callApi(city, query);
   }
 
-  callApi() {
-    this.foursquareService.getVenue().subscribe(data => {this.results = data.response.groups[0].items;
+  callApi(city, query) {
+    this.foursquareService.getVenue(city, query).subscribe(data => {this.results = data.response.groups[0].items;
     console.log(this.results.length);
 
     })
+  }
+
+  goToDetailPage(clickedLocation) {
+    this.router.navigate(['locations', clickedLocation.$key]);
+  }
+
+  saveLocation(name: string, AddressOne: string, AddressTwo: string, url: string, id: string) {
+    var newLocation: LocationObj = new LocationObj (name, AddressOne, AddressTwo, url, id);
+    this.foursquareService.addLocation(newLocation);
+  }
+
+  viewLocations() {
+    this.locations = this.foursquareService.getLocations();
   }
 
   constructor(private router: Router, private foursquareService: FoursquareService) {
   }
 
   ngOnInit() {
+    this.locations = this.foursquareService.getLocations();
   }
-  saveLocation(name: string, AddressOne: string, AddressTwo: string, url: string) {
-      var newLocation: Location = new Location (name, AddressOne, AddressTwo, url);
-      this.foursquareService.addLocation(newLocation);
-    }
+
+
 }

@@ -21,6 +21,7 @@ import { CrawlDetailComponent } from './crawl-detail/crawl-detail.component';
 import { LocationComponent } from './location/location.component';
 import { LocationListComponent } from './location-list/location-list.component';
 import  {FoursquareService} from "./foursquare.service";
+import { LocationDetailComponent } from './location-detail/location-detail.component';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -39,7 +40,8 @@ export const firebaseConfig = {
     NewCrawlComponent,
     CrawlDetailComponent,
     LocationComponent,
-    LocationListComponent
+    LocationListComponent,
+    LocationDetailComponent
   ],
   imports: [
     BrowserModule,
