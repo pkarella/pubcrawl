@@ -1,0 +1,3 @@
+<div class="container" *ngFor="let myCrawl of myCrawls | async">
+  <h3 (click)="goToDetailPage(myCrawl)">{{myCrawl.title}} by {{myCrawl.creator}}</h3>
+</div>

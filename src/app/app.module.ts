@@ -18,6 +18,7 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { CrawlListComponent } from './crawl-list/crawl-list.component';
 import { NewCrawlComponent } from './new-crawl/new-crawl.component';
 import { CrawlDetailComponent } from './crawl-detail/crawl-detail.component';
+import { MyCrawlListComponent } from './my-crawl-list/my-crawl-list.component';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -34,7 +35,8 @@ export const firebaseConfig = {
     CallbackComponent,
     CrawlListComponent,
     NewCrawlComponent,
-    CrawlDetailComponent
+    CrawlDetailComponent,
+    MyCrawlListComponent,
   ],
   imports: [
     BrowserModule,

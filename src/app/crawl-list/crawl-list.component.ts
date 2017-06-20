@@ -18,7 +18,7 @@ export class CrawlListComponent implements OnInit {
 
   ngOnInit() {
     this.crawls = this.crawlService.getCrawls();
-      console.log(this.crawls);
+    
   }
   goToDetailPage(clickedCrawl){
    this.router.navigate(['crawl-detail', clickedCrawl.$key])

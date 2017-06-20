@@ -22,7 +22,7 @@ export class NewCrawlComponent implements OnInit {
    } else {
      this.auth.getProfile((err, profile) => {
        this.profile = profile;
-  
+
      });
    }
 
@@ -31,6 +31,7 @@ export class NewCrawlComponent implements OnInit {
   submitForm(title: string, startingLocation: string, endingLocation: string, startingTime: string){
     var newCrawl: Crawl = new Crawl(this.profile.name, this.profile.sub, title, startingLocation, endingLocation, startingTime);
     this.crawlService.addCrawl(newCrawl);
+    console.log(newCrawl)
   }
 
 }
