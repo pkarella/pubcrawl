@@ -1,7 +1,8 @@
 <div>
-  <h2>{{(crawlToDisplay | async)?.title}}</h2>
-  <h3>By {{(crawlToDisplay | async)?.creator}}</h3>
-  <h4>We are meeting at {{(crawlToDisplay | async)?.startingTime}}pm</h4>
-  <h4>This is where we are starting our crawl: {{(crawlToDisplay | async)?.startingLocation}}</h4>
-  <h4>This is where we hope to finish the pub crawl: {{(crawlToDisplay | async)?.endingLocation}}</h4>
+  <h2>{{crawlToDisplay?.title}}</h2>
+  <h3>By {{crawlToDisplay?.creator}}</h3>
+  <h4>We are meeting at {{crawlToDisplay?.startingTime}}</h4>
+  <h4>This is where we are starting our crawl: {{crawlToDisplay?.startingLocation}}</h4>
+  <h4>This is where we hope to finish the pub crawl: {{crawlToDisplay?.endingLocation}}</h4>
+  <h1>{{crawlToDisplay?.authId}}</h1>
   </div>

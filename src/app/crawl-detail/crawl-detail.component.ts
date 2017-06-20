@@ -21,7 +21,12 @@ export class CrawlDetailComponent implements OnInit {
     this.route.params.forEach((urlParameters) => {
       this.crawlId = urlParameters['id'];
     });
-    this.crawlToDisplay = this.crawlService.getCrawlById(this.crawlId);
+    this.crawlService.getCrawlById(this.crawlId).subscribe(dataLastEmittedFromObserver => {
+      this.crawlToDisplay = dataLastEmittedFromObserver;
+
+      console.log(this.crawlToDisplay);
+    })
+
   }
 
 }

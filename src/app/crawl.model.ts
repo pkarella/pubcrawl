@@ -1,3 +1,3 @@
 export class Crawl {
-  constructor(public title: string, public creator: string, public startingLocation: string, public endingLocation: string, public startingTime: string) { }
+  constructor(public creator: string, public authId: string, public title: string,  public startingLocation: string, public endingLocation: string, public startingTime: string) { }
 }

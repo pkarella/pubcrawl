@@ -6,11 +6,6 @@
     <input #newTitle>
   </div>
 
-  <div>
-    <label>What is your Name?:</label>
-    <br>
-    <input #newCreator>
-  </div>
 
   <div>
     <label>Start Time:</label>
@@ -47,5 +42,5 @@
     <br>
     <textarea #newEndingLocation></textarea>
   </div>
-   <button (click)="submitForm(newTitle.value, newCreator.value, newStartingLocation.value, newEndingLocation.value, newStartingTime.value); newTitle.value=''; newStartingLocation.value=''; newEndingLocation.value=''; newCreator.value=''">Add</button>
+   <button (click)="submitForm(newTitle.value, newStartingLocation.value, newEndingLocation.value, newStartingTime.value); newTitle.value=''; newStartingLocation.value=''; newEndingLocation.value='';">Add</button>
 </div>

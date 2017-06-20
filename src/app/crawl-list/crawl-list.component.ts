@@ -13,10 +13,12 @@ import {Crawl} from '../crawl.model';
 export class CrawlListComponent implements OnInit {
   crawls: FirebaseListObservable<any[]>;
 
+
   constructor(private router: Router, private crawlService: CrawlService) { }
 
   ngOnInit() {
     this.crawls = this.crawlService.getCrawls();
+      console.log(this.crawls);
   }
   goToDetailPage(clickedCrawl){
    this.router.navigate(['crawl-detail', clickedCrawl.$key])
