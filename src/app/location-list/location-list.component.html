@@ -1,0 +1,39 @@
+<div class="well">
+  <ul>
+    <li *ngFor="let result of results">
+      <input class="form-control" #newName value="{{(result.venue)?.name }}">
+      <br>
+      <input class="form-control" #newAddressOne value="{{(result.venue.location)?.formattedAddress[0]}}">
+      <br>
+      <input class="form-control" #newAddressTwo value="{{(result.venue.location)?.formattedAddress[1]}}">
+      <br>
+      <input class="form-control" #newURL value="{{result.venue.url}}">
+      <br>
+      <input class="form-control" #newId value="{{(result.venue)?.id}}">
+
+      <button class="btn btn-success" (click)="saveLocation(newName.value, newAddressOne.value, newAddressTwo.value, newURL.value, newId.value)">Save</button>
+
+      <hr>
+    </li>
+  </ul>
+  <div class="form-group">
+    <label for="city">Choose a city to search:</label>
+    <input #newCityQuery>
+    <label for="city">Choose a category to search:</label>
+    <input #newCatQuery>
+    <button class="btn btn-info" (click)="onClick(newCityQuery.value, newCatQuery.value); newCityQuery.value=''; newCatQuery.value='';">Search</button>
+  </div>
+  <div class="form-group">
+
+    <label for="lists">View Locations added</label>
+    <button class="btn btn-default" (click)="viewLocations()">View</button>
+    <div *ngIf="locations">
+      <ul>
+        <li *ngFor="let location of locations| async" (click)="goToDetailPage(location)">{{location.name}} <br>
+          {{location.$key}}
+
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

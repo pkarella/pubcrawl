@@ -1,3 +1,11 @@
+<h2>These are all the crawls that you are attending... better be there mf... NO FLAKES IN MY DRINK!</h2>
 <div class="container" *ngFor="let myCrawl of myCrawls | async">
-  <h3 (click)="goToDetailPage(myCrawl)">{{myCrawl.title}} by {{myCrawl.creator}}</h3>
+  <div *ngIf="myCrawl.joinerId === this.profile.sub">
+    <div  class="panel panel-default">
+      <div class="panel-body">
+        <h3 (click)="goToDetailPage(myCrawl)">{{myCrawl.title}} by {{myCrawl.creator}}</h3>
+      </div>
+    </div>
+
+  </div>
 </div>

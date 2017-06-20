@@ -7,6 +7,8 @@ import {ProfileComponent} from './profile/profile.component';
 import {CrawlListComponent} from './crawl-list/crawl-list.component';
 import {NewCrawlComponent} from './new-crawl/new-crawl.component';
 import {CrawlDetailComponent} from './crawl-detail/crawl-detail.component';
+import { LocationListComponent } from "./location-list/location-list.component";
+import { LocationDetailComponent } from "./location-detail/location-detail.component";
 
 const appRoutes: Routes=[
   {
@@ -36,6 +38,14 @@ const appRoutes: Routes=[
   {
     path: 'crawl-detail/:id',
     component: CrawlDetailComponent
+  },
+  {
+    path:'location-list',
+    component: LocationListComponent
+  },
+  {
+    path:'locations/:id',
+    component: LocationDetailComponent
   }
 
 ];
