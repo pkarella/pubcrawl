@@ -1,0 +1,18 @@
+<div class="well">
+  <ul>
+    <li *ngFor="let result of results">
+      <input class="form-control" #newName value="{{(result.venue)?.name }}">
+      <br>
+      <input class="form-control" #newAddressOne value="{{(result.venue.location)?.formattedAddress[0]}}">
+      <br>
+      <input class="form-control" #newAddressTwo value="{{(result.venue.location)?.formattedAddress[1]}}">
+      <br>
+      <input class="form-control" #newURL value="{{result.venue.url}}">
+      <button class="btn btn-default" (click)="saveLocation">Save</button>
+      <hr>
+    </li>
+  </ul>
+
+
+  <button (click)="onClick()"> click me </button>
+</div>
