@@ -8,7 +8,7 @@
       <input class="form-control" #newAddressTwo value="{{(result.venue.location)?.formattedAddress[1]}}">
       <br>
       <input class="form-control" #newURL value="{{result.venue.url}}">
-      <button class="btn btn-default" (click)="saveLocation">Save</button>
+      <button class="btn btn-default" (click)="saveLocation(newName.value, newAddressOne.value, newAddressTwo.value, newURL.value)">Save</button>
       <hr>
     </li>
   </ul>

@@ -3,6 +3,7 @@ import { Location } from '../location.model';
 import { FoursquareService } from '../foursquare.service'
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-location-list',
   templateUrl: './location-list.component.html',
@@ -24,9 +25,13 @@ export class LocationListComponent implements OnInit {
     })
   }
 
-  constructor(private router: Router, private foursquareService: FoursquareService) { }
+  constructor(private router: Router, private foursquareService: FoursquareService) {
+  }
 
   ngOnInit() {
   }
-
+  saveLocation(name: string, AddressOne: string, AddressTwo: string, url: string) {
+      var newLocation: Location = new Location (name, AddressOne, AddressTwo, url);
+      this.foursquareService.addLocation(newLocation);
+    }
 }
