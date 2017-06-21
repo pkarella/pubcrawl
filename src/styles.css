@@ -1,1 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
+body{
+  background-image: url("http://image1.masterfile.com/getImage/NjQxLTA3NjM2MzUyZW4uMDAwMDAwMDA=ANu4uX/641-07636352en_Masterfile.jpg");
+  background-repeat: repeat-x;
+  background-size: auto;
+
+}
+body #a0-lock {
+  background-color: black;
+}

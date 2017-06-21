@@ -1,0 +1,22 @@
+.carousel-item img {
+  width: auto;
+   height: 500px;
+   max-height: 500px;
+
+}
+#title{
+  	margin: 20px auto;
+  	text-align: center;
+  	text-shadow: -1px -1px 0px rgba(255,255,255,0.3), 1px 1px 0px rgba(0,0,0,0.8);
+  	color: #FFFFFF;
+  	opacity: 0.5;
+  	font: 700 50px 'Bitter';
+  }
+#nav{
+  width: auto;
+  height: auto;
+}
+
+/*#back{
+    background-color: #43677D;
+}*/

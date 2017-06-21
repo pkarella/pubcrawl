@@ -1,5 +1,11 @@
 
 
-  <h3><em>{{(locationToDisplay | async)?.name}}</em></h3>
+<h3><em>{{(locationToDisplay | async)?.name}}</em></h3>
+<h4>{{(locationToDisplay | async)?.id}}</h4>
 
-<!-- <button class="btn btn-default" (click)="detailInfo()">View</button> -->
+<button class="btn btn-default" (click)="detailInfo(newBusinessId.value)">View Details</button>
+<div class="well">
+  <ul>
+    <li>{{outputs}}</li>
+  </ul>
+</div>

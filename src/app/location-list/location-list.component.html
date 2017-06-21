@@ -1,4 +1,4 @@
-<div class="well">
+<div class="panel-body">
   <ul>
     <li *ngFor="let result of results">
       <input class="form-control" #newName value="{{(result.venue)?.name }}">
@@ -16,6 +16,11 @@
       <hr>
     </li>
   </ul>
+</div>
+  <div id="panelOne"class="panel panel-default">
+    <div class="panel-body">
+
+
   <div class="form-group">
     <label for="city">Choose a city to search:</label>
     <input #newCityQuery>
@@ -23,9 +28,12 @@
     <input #newCatQuery>
     <button class="btn btn-info" (click)="onClick(newCityQuery.value, newCatQuery.value); newCityQuery.value=''; newCatQuery.value='';">Search</button>
   </div>
-  <div class="form-group">
-
-    <label for="lists">View Locations added</label>
+  </div>
+  </div>
+  <div id="panelTwo" class="panel panel-default">
+    <div class="panel-body">
+      <div class="form-group">
+        <label for="lists">View Locations added</label>
     <button class="btn btn-default" (click)="viewLocations()">View</button>
     <div *ngIf="locations">
       <ul>
@@ -37,3 +45,4 @@
     </div>
   </div>
 </div>
+  </div>
